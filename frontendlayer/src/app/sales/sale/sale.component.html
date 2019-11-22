@@ -1,0 +1,35 @@
+<mat-card class="sales ">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>order</mat-card-title>
+    <mat-card-subtitle>order form</mat-card-subtitle>
+  </mat-card-header>
+  <form class="example-form">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        placeholder="Customer"
+        aria-label="Number"
+        matInput
+        [formControl]="customer"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let cust of customers" [value]="cust.name">
+          {{ cust.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Sale Number" value="" />
+    </mat-form-field>
+  </form>
+</mat-card>
+
+<app-sale-line></app-sale-line>

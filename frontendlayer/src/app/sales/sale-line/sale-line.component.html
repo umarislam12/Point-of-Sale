@@ -1,0 +1,63 @@
+<form
+  #form="ngForm"
+  (submit)="onSubmit(form)"
+  autocomplete="off"
+  class="example-form"
+>
+  <mat-form-field class="example-full-width">
+    <input
+      placeholder="code"
+      matInput
+      readonly
+      name="saleLineId"
+      #saleLineId="ngModel"
+      [(ngModel)]="service.formData.SaleLine.saleLineId"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="productName"
+      name="productName"
+      #productName="ngModel"
+      [(ngModel)]="service.formData.productName"
+      class="form-control"
+      (change)="log(productName)"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input
+      name="Quantity"
+      #productQuantity="ngModel"
+      [(ngModel)]="service.formData.SaleLine.quantity"
+      matInput
+      placeholder="Quantity"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input
+      name="unitprice"
+      #unitprice="ngModel"
+      [(ngModel)]="service.formData.unitPrice"
+      matInput
+      placeholder="unit price"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input
+      name="totalQuantity"
+      #totalQuantity="ngModel"
+      [(ngModel)]="service.formData.SaleLine.totalQuantity"
+      matInput
+      placeholder="total price"
+    />
+  </mat-form-field>
+
+  <button type="submit" mat-fab>+</button>
+</form>
+
+<app-sale-list> </app-sale-list>

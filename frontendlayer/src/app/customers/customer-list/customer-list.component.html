@@ -1,0 +1,32 @@
+<p>customer-list</p>
+
+<table class="table  ">
+  <thead>
+    <tr class="table-active  ">
+      <td>name</td>
+      <td>gender</td>
+      <td>date of birth</td>
+      <td>is Active</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cust of service.custList">
+      <td>
+        {{ cust.name }}
+      </td>
+      <td>{{ cust.gender }}</td>
+      <td>{{ cust.dateOfBirth }}</td>
+      <td *ngIf="cust.isActive == true">yes</td>
+      <td *ngIf="cust.isActive == false">No</td>
+      <td>
+        <button (click)="onDelete(cust.id)" class="btn btn-outline-danger">
+          X
+        </button>
+      </td>
+      <!-- event binding -->
+      <td class="padding-0" (click)="populateForm(cust)">
+        <button mat-button><mat-icon>create</mat-icon></button>
+      </td>
+    </tr>
+  </tbody>
+</table>

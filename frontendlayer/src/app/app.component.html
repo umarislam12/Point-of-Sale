@@ -1,0 +1,20 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="container">
+  <nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <a
+      #cust
+      routerLink="/customer"
+      routerLinkActive="active"
+      class="navbar-brand"
+      >customers</a
+    >
+    <a #sal routerLink="/sale" routerLinkActive="active" class="navbar-brand"
+      >sales</a
+    >
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- <li> routerLinkActive="active" routerLink="customer"> -->
+<!-- <a routerLinkActive="active" routerLink="sale"> -->
